@@ -1,0 +1,12 @@
+h1{
+    color:brown;
+    margin-left: 200px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.message {
+    margin-left: 200px;
+}
+body {
+    background-color: bisque;
+}

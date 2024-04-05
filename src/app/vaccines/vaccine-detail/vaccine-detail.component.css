@@ -1,0 +1,20 @@
+.span-num {
+    color:brown;
+    margin-inline-start: 20px;
+}
+.span-name {
+    color:brown;
+    margin-inline-start: 30px;
+}
+.delete-vaccine {
+    color: brown;
+    background-color: transparent;
+    border: none;
+    margin-inline-end: 20px;
+}
+.main-div {
+    background-color: bisque;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid brown;
+}

@@ -1,0 +1,12 @@
+<div class="main-div">
+    <h1 class="heading">VACCINES</h1>
+    <div class="input-vaccine">
+        <div class="form-group d-flex">
+            <input type="text" class="form-control" id="inputName" placeholder="Enter vaccine name" [(ngModel)]="vaccineName">
+            <button class="btn" (click)="addVaccine()">Add</button>
+        </div>
+    </div>
+    <div class="vaccine-list">
+        <app-vaccine-detail *ngFor="let vaccine of vaccines;let i = index" [vaccineNum]="i" [vaccineDetail]="vaccine"></app-vaccine-detail>
+    </div>
+</div>

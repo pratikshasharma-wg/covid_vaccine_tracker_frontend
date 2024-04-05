@@ -1,0 +1,5 @@
+<div class="main-div d-flex">
+    <span class="span-num">{{ vaccineNum+1 }}</span>
+    <span class="span-name flex-grow-1">{{ vaccineDetail["vaccine_name"] }}</span>
+    <button class="delete-vaccine" (click)="deleteVaccine(vaccineDetail['vaccine_id'])"><i class="fas fa-trash-alt"></i></button>
+</div>

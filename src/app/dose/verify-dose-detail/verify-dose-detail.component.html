@@ -1,0 +1,24 @@
+<h1 class="display-4">Unapproved Users</h1>
+<p-table [value]="unapprovedData" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20]">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Approval ID</th>
+        <th>Dose CID</th>
+        <th>Dose Approved</th>
+        <th>Dose Number</th>
+        <th>User ID</th>
+        <th>Approve</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+      <tr>
+        <td>{{ data.approval_id }}</td>
+        <td>{{ data.dose_cid }}</td>
+        <td>{{ data.dose_is_approved }}</td>
+        <td>{{ data.dose_num }}</td>
+        <td>{{ data.user_id }}</td>
+        <td><button class="btn" (click)="approve()">Approve</button></td>
+      </tr>
+    </ng-template>
+  </p-table>
+  

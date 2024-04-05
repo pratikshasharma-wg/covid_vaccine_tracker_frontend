@@ -1,0 +1,18 @@
+tr {
+    background-color:bisque
+}
+td {
+    color:brown;
+    font-weight: bold;
+}
+.display-4 {
+    margin-left: 200px;
+    color: brown;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.btn {
+    border: 2px solid brown;
+    background-color: rgb(187, 216, 207);
+}

@@ -1,0 +1,23 @@
+.btn {
+    background-color:  rgb(232, 138, 118);
+    border-color: rgb(227, 85, 85);
+    box-shadow: 5px 5px 5px grey;
+    margin-left: 20px;
+}
+.heading {
+    color: brown;
+    text-align: center;
+    margin-left: 300px;
+    font-weight: bold;
+}
+.form-group {
+    margin: 100px;
+}
+.main-div {
+    margin-left: 200px;
+    margin-top: 50px;
+}
+.input-vaccine {
+    margin-left: 20px;   
+}
+

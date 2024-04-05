@@ -1,0 +1,10 @@
+<form #loginForm="ngForm" (ngSubmit)="login()">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="welcome-text display-3">WELCOME</h1>
+    <input type="text" class="form-control" placeholder="Enter Email" name="email" ngModel email required>
+    <p style="align-self: flex-start;" *ngIf="loginForm.controls['email']?.errors?.required && loginForm.controls['email'].dirty">*Email Is Required</p>
+    <input type="password" class="form-control" placeholder="Enter Password" name="password" ngModel required>
+    <p style="align-self: flex-start;" *ngIf="loginForm.controls['password']?.errors?.required && loginForm.controls['password'].dirty">*Password Is Required</p>
+    <button class="btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+  </div>
+</form>

@@ -1,0 +1,41 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px; min-height: 100vh; height: 100%; background-color: #9e3028;">
+    <a routerLink="profile" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none center-container">
+      <div class="center-container">
+        <img src="https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113_640.png" alt="Profile Image" class="circle-img">
+      </div>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a routerLink="" class="nav-link text-white" aria-current="page">
+          Dashboard
+        </a>
+      </li>
+      <li *ngIf="role == 'Employee' ">
+        <a routerLink="profile" class="nav-link text-white">
+          Profile
+        </a>
+      </li>
+      <li *ngIf="role == 'Admin' ">
+        <a routerLink="users" class="nav-link text-white">
+          Employees
+        </a>
+      </li>
+      <li *ngIf="role == 'Admin' ">
+        <a routerLink="vaccines" class="nav-link text-white">
+          Vaccines
+        </a>
+      </li>
+      <li *ngIf="role == 'Employee'">
+        <a routerLink="dose" class="nav-link text-white">
+          Dose Details
+        </a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="logout()" style="cursor: pointer;">
+          Logout
+        </a>
+      </li>
+    </ul>
+    <hr>
+  </div>

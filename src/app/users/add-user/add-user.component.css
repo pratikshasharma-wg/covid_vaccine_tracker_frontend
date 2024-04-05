@@ -1,0 +1,19 @@
+.btn {
+    border: 2px solid brown;
+    background-color: rgb(243, 175, 163);
+}
+.display-3 {
+    color:brown;
+    font-weight: bold;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.form {
+    margin-left: 150px;
+    margin-top: 100px;
+}
+input {
+    background-color: bisque;
+    border-color: brown;
+}

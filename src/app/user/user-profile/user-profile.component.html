@@ -1,0 +1,34 @@
+<h1 class="display-4">Profile</h1>
+
+<div class="profile">
+    <form class="profile-form" #profileForm="ngForm" (ngSubmit)="update()">
+
+        <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" name="name" id="inputName" placeholder="Enter your name" ngModel required>
+            <div style="color: red;" *ngIf="profileForm.controls['name']?.errors?.required && profileForm.controls['name'].dirty">*Name is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" name="email" id="inputEmail" value="Pratiksha@gmail.com" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male" checked ngModel required>
+                    <label class="form-check-label" for="gridRadios1">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female" ngModel required>
+                    <label class="form-check-label" for="gridRadios2">Female</label>
+                </div>
+                <div class="invalid-feedback" *ngIf="!profileForm.controls['gender']?.errors?.required">*Gender is required</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Save</button>
+    </form>
+</div>

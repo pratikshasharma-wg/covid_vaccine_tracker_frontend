@@ -1,0 +1,33 @@
+.btn {
+    border: 2px solid brown;
+    background-color: rgb(246, 202, 202);
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-bottom: 20px;
+}
+.display-4 {
+    color: brown;
+    font-weight: bold;
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+.form-control {
+    border-color: brown;
+    background-color: rgb(223, 218, 218);
+}
+
+.tr{
+    background-color: bisque;
+    border: brown;
+}
+
+td{
+    color: brown;
+    font-weight: bold;
+}
+.d-flex-column {
+    margin-left: 100px;
+}
+.table{
+    margin-left: 100px;
+}

@@ -1,0 +1,31 @@
+<h1 class="display-4">EMPLOYEES</h1>
+<div class="d-flex-column">
+    <div class="filters d-flex">
+        <input type="date" class="form-control mx-3" [(ngModel)]="date"/>
+        <input type="text" class="form-control mx-3" [(ngModel)]="vaccine" placeholder="vaccine name"/>
+        <input type="text" class="form-control mx-3" [(ngModel)]="doseNum" placeholder="dose number"/>
+    </div>
+   <button class="btn" (click)="fetchEmployees()">Fetch Employees</button>
+</div>
+<p-table [value]="users" class="table">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>User ID</th>
+        <th>Email</th>
+        <th>Vaccine</th>
+        <th>Dose Number</th>
+        <th>Dose Date</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user let-i="rowIndex">
+      <tr class="tr">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.vaccine_name }}</td>
+        <td>{{ user.dose_num }}</td>
+        <td>{{ user.dose_date }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  
+  

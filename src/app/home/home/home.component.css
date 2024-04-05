@@ -1,0 +1,7 @@
+div {
+    display: flex;
+    flex-direction: row;
+}
+app-vaccine-list {
+    background: url('../../../assets/bg-image.jpg') no-repeat;
+}
