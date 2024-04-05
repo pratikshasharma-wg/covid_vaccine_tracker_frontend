@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { Password } from 'primeng/password';
 import { NgForm } from '@angular/forms';
 import { MessageService } from '../../shared/message/message.service';
 import { LoginResponse } from './login.model';
+
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,6 @@ export class LoginComponent {
   login() {
     const email = this.form.value.email;
     const password = this.form.value.password;
-    console.log(this.form);
     this.authService.login({email: email, password: password}).subscribe(
       (resData: LoginResponse) => {
         this.authService.isLoggedIn = true;

@@ -15,9 +15,11 @@ export class VerifyDoseDetailComponent {
   }
 
   ngOnInit() {
-    this.doseService.getUnapprovedData().subscribe((resData) => {
+    this.doseService.getUnapprovedData().subscribe(
+      (resData) => {
       this.unapprovedData = resData["unapproved_data"]
-    }, (error) => {
+    }, 
+    (error) => {
       this.messageService.showMessage(error);
     })
   }

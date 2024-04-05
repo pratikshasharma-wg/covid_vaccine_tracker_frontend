@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { constantString } from "../app.helpers";
 import { Router } from "@angular/router";
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -29,8 +30,12 @@ export class AuthService {
     }
 
     changePassword(newPassword: string) {
-        return this.http.post(`${constantString.apiUrl}/change-password`, {new_password: newPassword}, {
-            headers: new HttpHeaders({
+        return this.http.post(
+            `${constantString.apiUrl}/change-password`, 
+            {
+                new_password: newPassword
+            }, {
+                headers: new HttpHeaders({
                 Authorization: `Bearer ${this.currentUserToken}`
             })
         })

@@ -1,23 +1,33 @@
 <h1 class="display-4">Add Dose Details</h1>
 <form #vaccineForm="ngForm" (ngSubmit)="submitForm()" class="form d-flex row my-3">
+
     <div class="form-group">
       <label for="vaccineName">Vaccine Name</label>
       <input type="text" class="form-control" id="vaccineName" name="vaccineName" ngModel required>
       <div style="color: red;" *ngIf="vaccineForm.controls['vaccineName']?.errors?.required && 
-      (vaccineForm.controls['vaccineName'].dirty || vaccineForm.controls['vaccineName'].touched)">*Vaccine name is required</div>
+      (vaccineForm.controls['vaccineName'].dirty || vaccineForm.controls['vaccineName'].touched)">
+      *Vaccine name is required
+      </div>
     </div>
+
     <div class="form-group">
       <label for="doseDate">Dose Date</label>
       <input type="date" class="form-control" id="doseDate" name="doseDate" ngModel required>
       <div style="color: red;" *ngIf="vaccineForm.controls['doseDate']?.errors?.required && 
-      (vaccineForm.controls['doseDate'].dirty || vaccineForm.controls['doseDate'].touched)">*Dose date is required</div>
+      (vaccineForm.controls['doseDate'].dirty || vaccineForm.controls['doseDate'].touched)">
+      *Dose date is required
+      </div>
     </div>
+
     <div class="form-group">
       <label for="doseCid">Dose CID</label>
       <input type="text" class="form-control" id="doseCid" name="doseCid" ngModel required>
       <div style="color: red;" *ngIf="vaccineForm.controls['doseCid']?.errors?.required && 
-      (vaccineForm.controls['doseCid'].dirty || vaccineForm.controls['doseCid'].touched)">*Dose CID is required</div>
+      (vaccineForm.controls['doseCid'].dirty || vaccineForm.controls['doseCid'].touched)">
+      *Dose CID is required
+      </div>
     </div>
+
     <button type="submit" class="btn" [disabled]="!vaccineForm.valid">Submit</button>
   </form>
   
