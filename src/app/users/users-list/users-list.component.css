@@ -2,20 +2,24 @@
     border: 2px solid brown;
     background-color: rgb(246, 202, 202);
     margin-top: 50px;
-    margin-left: 250px;
     margin-bottom: 20px;
+    font-weight: bold;
+    color: brown;
+    transition: background-color 0.5s;
+    &:hover {
+        background-color: rgb(131, 133, 158);
+    }
+    
 }
 .display-4 {
     color: brown;
     font-weight: bold;
-    margin-left: 200px;
     margin-bottom: 50px;
 }
 .form-control {
     border-color: brown;
     background-color: rgb(223, 218, 218);
 }
-
 .tr{
     background-color: bisque;
     border: brown;
@@ -25,9 +29,11 @@ td{
     color: brown;
     font-weight: bold;
 }
-.d-flex-column {
+.table .p-table-wrapper .p-datatable .p-datatable-table{
     margin-left: 100px;
+    border-radius: 200px;
 }
-.table{
-    margin-left: 100px;
+.users-list-div{
+    border-top:50px solid #9e3028;
+    text-align: center;
 }

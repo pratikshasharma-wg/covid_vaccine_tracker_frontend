@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { checkLoggedInUser } from '../auth/auth.guard';
 import { HomeGuard } from './home.guard';
 
 

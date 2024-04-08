@@ -3,7 +3,10 @@ import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +15,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MessageComponent } from './shared/message/message.component';
 import { checkLoggedInUser } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationService } from 'primeng/api';
 
 
 const appRoutes: Routes = [
@@ -31,9 +36,14 @@ const appRoutes: Routes = [
     ButtonModule,
     InputTextModule,
     HttpClientModule,
-    PasswordModule
+    PasswordModule,
+    NgbTooltipModule,
+    ToastModule,
+    ConfirmDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
+    ConfirmationService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

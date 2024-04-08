@@ -7,17 +7,21 @@
 .heading {
     color: brown;
     text-align: center;
-    margin-left: 300px;
     font-weight: bold;
 }
 .form-group {
     margin: 100px;
 }
-.main-div {
-    margin-left: 200px;
-    margin-top: 50px;
+.vaccine-div {
+    border-top: 50px solid #9e3028;
 }
-.input-vaccine {
-    margin-left: 20px;   
+.input-vaccine input{
+    margin-left: 20px;  
+    transition: box-shadow 0.5s;
+    &:hover {
+        box-shadow: 10px 10px 10px rgb(191, 167, 213);
+    } 
 }
-
+img{
+    width:auto;
+}

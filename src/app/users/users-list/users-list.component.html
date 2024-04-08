@@ -1,13 +1,14 @@
-<h1 class="display-4">EMPLOYEES</h1>
-<div class="d-flex-column">
+<div class="users-list-div d-flex flex-column">
+  <h1 class="display-4">EMPLOYEES</h1>
+<div>
     <div class="filters d-flex">
-        <input type="date" class="form-control mx-3" [(ngModel)]="date"/>
-        <input type="text" class="form-control mx-3" [(ngModel)]="vaccine" placeholder="vaccine name"/>
-        <input type="text" class="form-control mx-3" [(ngModel)]="doseNum" placeholder="dose number"/>
+        <input type="date" class="form-control mx-3" [(ngModel)]="date" [ngbTooltip]="'Select date filter'"/>
+        <input type="text" class="form-control mx-3" [(ngModel)]="vaccine" placeholder="vaccine name" [ngbTooltip]="'Enter vaccine name filter'"/>
+        <input type="number" class="form-control mx-3" [(ngModel)]="doseNum" placeholder="dose number" [ngbTooltip]="'Select dose number filter'"/>
     </div>
    <button class="btn" (click)="fetchEmployees()">Fetch Employees</button>
 </div>
-<p-table [value]="users" class="table">
+<p-table [value]="users" styleClass="table">
     <ng-template pTemplate="header">
       <tr>
         <th>User ID</th>
@@ -27,5 +28,4 @@
       </tr>
     </ng-template>
   </p-table>
-  
-  
+</div>  

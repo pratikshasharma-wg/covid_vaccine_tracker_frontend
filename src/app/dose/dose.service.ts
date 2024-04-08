@@ -2,11 +2,14 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { constantString } from "../app.helpers";
 import { AuthService } from "../auth/auth.service";
+import { Subject } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 export class DoseService {
+
+    isApproved: Subject<any> = new Subject();
     
     constructor(private http: HttpClient, private authService: AuthService) {
 
@@ -24,8 +27,16 @@ export class DoseService {
         )
     }
 
-    verifyDoseDetail() {
-        
+    verifyDoseDetail(approvalId) {
+        return this.http.put(
+            `${constantString.apiUrl}/users/approve/${approvalId}`,
+            {},
+            {
+                headers: new HttpHeaders({
+                    Authorization: `Bearer ${this.authService.currentUserToken}`
+                })
+            }
+        )
     }
 
     getUnapprovedData() {

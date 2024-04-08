@@ -18,6 +18,10 @@ h1{
 label{
     color:rgb(180, 83, 83);
 }
-input {
+input, select {
     background-color: bisque;
+    transition: box-shadow 0.3s;
+    &:hover{
+        box-shadow: 10px 10px 10px rgb(138, 153, 179);
+    }
 }

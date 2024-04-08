@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { VaccineService } from '../vaccine.service';
 import { MessageService } from '../../shared/message/message.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-vaccine-detail',
@@ -18,6 +19,7 @@ export class VaccineDetailComponent {
   deleteVaccine(vaccineId) {
     this.vaccineService.removeVaccine(vaccineId).subscribe((resData: any) => {
       this.messageService.showMessage(resData.message);
+      this.vaccineService.vaccineDeleted.next(vaccineId);
     },(error) => {
       this.messageService.showMessage(error.error?.message);
     })

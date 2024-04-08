@@ -1,7 +1,13 @@
-div {
+.main-div {
     display: flex;
+    height: 100vh;
     flex-direction: row;
 }
 app-vaccine-list {
     background: url('../../../assets/bg-image.jpg') no-repeat;
+}
+.content {
+    flex: 1;
+    overflow: auto;
+    margin-top: 50px solid black;
 }

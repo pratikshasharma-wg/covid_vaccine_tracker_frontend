@@ -2,11 +2,14 @@ import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { constantString } from "../app.helpers"
 import { AuthService } from "../auth/auth.service"
+import { Subject } from "rxjs"
 
 @Injectable({
     providedIn: 'root'
 })
 export class VaccineService {
+
+    vaccineDeleted: Subject<any> = new Subject();
 
     constructor(private http: HttpClient, private authService: AuthService) {
 

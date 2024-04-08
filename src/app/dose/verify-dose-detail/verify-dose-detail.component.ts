@@ -15,6 +15,9 @@ export class VerifyDoseDetailComponent {
   }
 
   ngOnInit() {
+    this.doseService.isApproved.subscribe((approvalId) => {
+      this.unapprovedData = this.unapprovedData.filter(data => data["approval_id"] !== approvalId)
+    })
     this.doseService.getUnapprovedData().subscribe(
       (resData) => {
       this.unapprovedData = resData["unapproved_data"]
@@ -24,7 +27,12 @@ export class VerifyDoseDetailComponent {
     })
   }
 
-  approve() {
-    
+  approve(approvalId) {
+    this.doseService.isApproved.next(approvalId);
+    this.doseService.verifyDoseDetail(approvalId).subscribe(
+      (resData: any) => {
+        this.messageService.showMessage(resData.message);
+      }
+    )
   }
 }

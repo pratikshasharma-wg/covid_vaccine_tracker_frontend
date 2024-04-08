@@ -1,7 +1,6 @@
-<h1 class="display-4">Profile</h1>
-
-<div class="profile">
-    <form class="profile-form" #profileForm="ngForm" (ngSubmit)="update()">
+<div class="profile d-flex flex-column">
+    <h1 class="display-4">Profile</h1>
+    <form class="profile-form" #profileForm="ngForm" (ngSubmit)="update()" class="form d-flex flex-column">
 
         <div class="form-group">
             <label for="inputName">Name</label>

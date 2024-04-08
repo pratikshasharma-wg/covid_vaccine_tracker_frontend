@@ -1,26 +1,27 @@
-.profileForm {
-    width: 300px;
-    margin: 0 auto;
+.form {
+    margin: 100px;
     padding: 20px;
-    text-align: left;
 }
 .display-4 {
     font-weight: bold;
     color:brown;
 }
 .profile {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    border-top: 50px solid #9e3028;
 }
-
-.form-group.row {
+.display-4 {
+    text-align: center;
+}
+.form-group {
     margin-bottom: 15px;
 }
-
 .btn {
-    background-color: rgb(232, 138, 118);
-    margin: 0 auto; 
+    background-color: rgb(232, 138, 118);  
+}
+input {
+    background-color: bisque;
+    transition: box-shadow ;
+    &:hover {
+         box-shadow: 10px 10px 10px #c5928e;
+    }
 }

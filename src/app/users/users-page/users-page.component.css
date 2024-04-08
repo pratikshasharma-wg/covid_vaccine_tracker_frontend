@@ -1,16 +1,12 @@
 .first-row {
-    margin-left: 200px;
     margin-top: 30px;
 }
 .second-row {
     align-items: center;
-    margin-left: 225px;
     margin-top: 30px;
 }
 .heading {
     color:rgb(192, 75, 75);
-    text-align: center;
-    margin-left: 200px;
     margin-top: 50px;
     font-weight: bold;
 }
@@ -23,4 +19,27 @@
     box-shadow: 5px 5px 10px grey;
     width: 200px;
     height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 200px;
+    transition: box-shadow 0.5s;
+    &:hover {
+        box-shadow: 20px 20px 20px rgb(96, 96, 134);
+    }
+
+}
+.add {
+    background-image: url('../../../assets/add_emp.png');
+}
+.view {
+    background-image: url('../../../assets/view_emp.png');
+}
+.approve {
+    background-image: url('../../../assets/approve_emp_details.jpg');
+}
+.users-page-div {
+    border-top: 50px solid #9e3028;
+    text-align: center;
 }

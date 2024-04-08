@@ -8,6 +8,7 @@ import { UserDetailComponent } from './users-list/user-detail/user-detail.compon
 import { AddUserComponent } from './add-user/add-user.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { FormsModule } from '@angular/forms';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     UsersRoutingModule,
     TableModule,
-    FormsModule
+    FormsModule,
+    NgbTooltipModule
   ]
 })
 export class UsersModule { }
