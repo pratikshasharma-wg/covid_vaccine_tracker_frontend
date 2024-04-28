@@ -8,14 +8,16 @@ import { MessageService } from "../message/message.service";
 })
 export class MessageComponent {
     message: string;
+    bgColor: string;
 
     constructor(private messageService: MessageService) {
 
     }
 
     ngOnInit() {
-        this.messageService.message.subscribe((message) => {
-            this.message = message;
+        this.messageService.message.subscribe((messageData) => {
+            this.message = messageData.message;
+            this.bgColor = messageData.bgColor;
         });
     }
 

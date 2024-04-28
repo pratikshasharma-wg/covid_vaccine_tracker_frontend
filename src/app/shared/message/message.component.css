@@ -6,6 +6,6 @@ div{
     background-color: rgb(234, 149, 143);
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 10px 10px 10px grey;
+    box-shadow: 5px 5px 10px grey;
     transform: translate(-50%);
 }

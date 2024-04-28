@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { constantString } from "../app.helpers";
 import { Router } from "@angular/router";
+import { MessageService } from "../shared/message/message.service";
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class AuthService {
     isLoggedIn: Boolean;
     currentUserToken: string;
 
-    constructor(private http: HttpClient, private router: Router) {
+    constructor(private http: HttpClient, private router: Router, private messageService: MessageService) {
         this.currentUserToken = sessionStorage.getItem('token');
         this.isLoggedIn = this.currentUserToken ? true : false;
     }
@@ -27,6 +28,7 @@ export class AuthService {
         this.role = null;
         sessionStorage.clear();
         this.router.navigate(['/login']);
+        this.messageService.showMessage("Logged Out Successfully")
     }
 
     changePassword(newPassword: string) {
@@ -39,5 +41,16 @@ export class AuthService {
                 Authorization: `Bearer ${this.currentUserToken}`
             })
         })
+    }
+
+    checkFirstTimeLogin() {
+        return this.http.get(
+            `${constantString.apiUrl}/check-first-time`,
+            {
+                headers: new HttpHeaders({
+                    Authorization: `Bearer ${this.currentUserToken}`
+                })
+            }
+        )
     }
 }

@@ -1,7 +1,13 @@
+.sidebar{
+    background-color: #9e3028;
+    width: 280px;
+    height: 100vh;
+    min-height: 100%;
+}
 .circle-img{
     width: 200px;
     height: 200px;
-    border-radius: 100%;   
+    border-radius: 100%;
 }
 
 .center-container {
@@ -12,4 +18,7 @@
 a {
     font-weight: bold;
     font-size: 30px;
+}
+.active-link{
+    background-color: rgba(70,90,126,0.4);
 }

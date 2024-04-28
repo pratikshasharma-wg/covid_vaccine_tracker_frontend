@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between" *ngIf="message">
+<div class="d-flex justify-content-between" *ngIf="message" [ngStyle]="{'background-color': bgColor ? bgColor: null}">
     <span>{{message}}</span>
     <span (click)="hideMessage()" style="cursor: pointer;">X</span>
 </div>

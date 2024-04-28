@@ -6,10 +6,14 @@ import { DoseRoutingModule } from './dose-routing.module';
 import { DoseDetailComponent } from './dose-detail/dose-detail.component';
 import { VerifyDoseDetailComponent } from './verify-dose-detail/verify-dose-detail.component';
 import { FormsModule } from '@angular/forms';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AllDoseComponent } from './all-dose-details/all-dose.component';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
   declarations: [
+    AllDoseComponent,
     DoseDetailComponent,
     VerifyDoseDetailComponent
   ],
@@ -17,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     DoseRoutingModule,
     FormsModule,
-    TableModule
+    ProgressSpinnerModule,
+    TableModule,
+    DialogModule
   ]
 })
 export class DoseModule { }

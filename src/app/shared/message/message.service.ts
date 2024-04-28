@@ -1,22 +1,23 @@
+import { Time } from "@angular/common";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject, Subject, TimeoutInfo } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 export class MessageService {
-    message = new BehaviorSubject<string>(null);
-    timeRef
+    message: BehaviorSubject<{message: string, bgColor: string}> = new BehaviorSubject<{message: string, bgColor: string}>(null);
+    timeoutRef: ReturnType<typeof setTimeout>
 
-    showMessage(message: string) {
-        this.message.next(message);
-        this.timeRef = setTimeout( () => {
+    showMessage(message: string, bgColor: string = null) {
+        this.message.next({message: message, bgColor: bgColor});
+        this.timeoutRef = setTimeout(() => {
             this.hideMessage();
         }, 2000);
     }
 
-    hideMessage(){
-        this.message.next(null);
-        clearTimeout(this.timeRef);
+    hideMessage() {
+        this.message.next({message: null, bgColor: null});
+        clearTimeout(this.timeoutRef);
     }
 }

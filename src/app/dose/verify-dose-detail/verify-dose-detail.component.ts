@@ -8,14 +8,14 @@ import { MessageService } from '../../shared/message/message.service';
   styleUrl: './verify-dose-detail.component.css'
 })
 export class VerifyDoseDetailComponent {
-  unapprovedData: any
+  unapprovedData: any = null;
 
   constructor(private doseService: DoseService, private messageService: MessageService) {
 
   }
 
   ngOnInit() {
-    this.doseService.isApproved.subscribe((approvalId) => {
+    this.doseService.isApprovedOrDisaprroved.subscribe((approvalId) => {
       this.unapprovedData = this.unapprovedData.filter(data => data["approval_id"] !== approvalId)
     })
     this.doseService.getUnapprovedData().subscribe(
@@ -28,9 +28,18 @@ export class VerifyDoseDetailComponent {
   }
 
   approve(approvalId) {
-    this.doseService.isApproved.next(approvalId);
     this.doseService.verifyDoseDetail(approvalId).subscribe(
       (resData: any) => {
+        this.doseService.isApprovedOrDisaprroved.next(approvalId);
+        this.messageService.showMessage(resData.message);
+      }
+    )
+  }
+
+  disapprove(approvalId) {
+    this.doseService.declineDoseDetail(approvalId).subscribe(
+      (resData: any) => {
+        this.doseService.isApprovedOrDisaprroved.next(approvalId);
         this.messageService.showMessage(resData.message);
       }
     )

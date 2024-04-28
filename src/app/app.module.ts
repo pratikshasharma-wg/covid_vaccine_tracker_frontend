@@ -6,21 +6,25 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { BrowserModule } from '@angular/platform-browser';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeModule } from './home/home.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MessageComponent } from './shared/message/message.component';
 import { checkLoggedInUser } from './auth/auth.guard';
-import { AuthInterceptor } from './auth/auth.interceptor';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationService } from 'primeng/api';
 
 
 const appRoutes: Routes = [
-  {path: "login",canActivate: [checkLoggedInUser], loadChildren: () => import('./auth/auth.module').then((mod) => mod.AuthModule)}
+  {
+    path: "login",
+    canActivate: [checkLoggedInUser],
+    loadChildren: () => import('./auth/auth.module').then((mod) => mod.AuthModule)
+  }
 ]
 
 @NgModule({
@@ -30,7 +34,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules}),
     HomeModule,
     TableModule,
     ButtonModule,
@@ -40,11 +44,11 @@ const appRoutes: Routes = [
     NgbTooltipModule,
     ToastModule,
     ConfirmDialogModule,
+    ProgressSpinnerModule,
     BrowserAnimationsModule
   ],
   providers: [
     ConfirmationService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

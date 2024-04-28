@@ -6,13 +6,18 @@ td {
     font-weight: bold;
 }
 .display-4 {
-    margin-left: 200px;
     color: brown;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 50px;
 }
-.btn {
-    border: 2px solid brown;
+.approve {
     background-color: rgb(187, 216, 207);
+}
+.decline{
+    background-color: rgb(250, 160, 140);
+}
+.message{
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
 }

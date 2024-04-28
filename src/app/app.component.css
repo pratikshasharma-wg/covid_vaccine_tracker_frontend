@@ -1,21 +1,3 @@
-.ui-dialog .ui-dialog-titlebar {
-    background-color: #007bff; /* Blue color */
-  }
-  
-  .ui-dialog .ui-dialog-title {
-    color: #ffffff; /* White color */
-  }
-  
-  .ui-dialog .ui-dialog-content {
-    color: #333333; /* Dark gray color */
-  }
-  
-  .ui-dialog .ui-button {
-    background-color: #28a745; /* Green color */
-    color: #ffffff; /* White color */
-  }
-  
-  .ui-dialog .ui-button:hover {
-    background-color: #218838; /* Dark green color */
-  }
-  
+a{
+    background-color: black;
+}

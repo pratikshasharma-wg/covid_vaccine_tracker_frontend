@@ -13,8 +13,6 @@ export class SidebarComponent {
     this.role = authService.role;
   }
 
-  
-
   logout() {
     this.authService.logout();
   }

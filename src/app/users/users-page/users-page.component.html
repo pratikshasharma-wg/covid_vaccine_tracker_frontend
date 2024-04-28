@@ -1,10 +1,17 @@
 <div class="users-page-div d-flex flex-column">
     <h1 class="heading display-4">EMPLOYEES</h1>
     <div class="first-row d-flex justify-content-evenly">
-        <button class="add btn p-5" (click)="addEmployeePage()" title="Add a new employee"></button>
-        <button class="view btn p-5" (click)="viewEmployeesPage()" title="View all the employees"></button>
+        <div class="tile p-5 d-flex flex-column" (click)="addEmployeePage()" title="Add a new employee">
+            <div class="add image"></div>
+            Add an Employee
+        </div>
+        <div class="tile p-5" (click)="viewEmployeesPage()" title="View all the employees">
+            <div class="view image"></div>
+        </div>
     </div>
     <div class="second-row d-flex justify-content-center">
-        <button class="approve btn p-5" (click)="approveDosePage()" title="Approve dose details of employees"></button>
+        <div class="tile" (click)="approveDosePage()" title="Approve dose details of employees">
+            <div class="approve image"></div>
+        </div>
     </div>
 </div>

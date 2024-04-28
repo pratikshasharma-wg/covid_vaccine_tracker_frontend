@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DoseDetailComponent } from './dose-detail/dose-detail.component';
 import { VerifyDoseDetailComponent } from './verify-dose-detail/verify-dose-detail.component';
+import { AllDoseComponent } from './all-dose-details/all-dose.component';
 
 const routes: Routes = [
-  {path: "dose", component: DoseDetailComponent},
+  {path: "dose", component: AllDoseComponent},
   {path: "unapproved", component: VerifyDoseDetailComponent}
 ];
 

@@ -1,0 +1,33 @@
+<div class="top-border">
+    <div class="d-flex justify-content-center" style="padding: 20px;" *ngIf="allDoses === null">
+        <p-progressSpinner strokeWidth="3" animationDuration="1s"  [style]="{ width: '30px', height: '30px' }"></p-progressSpinner>
+    </div>
+    <div class="d-flex flex-column justify-content-between" style="padding: 20px;height: 100%;" *ngIf="allDoses !== null">
+        <div class="d-flex flex-column justify-content-start">
+            <div class="dose-item" *ngFor="let dose of allDoses" [ngStyle]="{'background-color': dose.dose_is_approved === 'No' ? 'rgb(232, 138, 118)' : 'bisque', 'border-radius': '8px', 'padding': '10px', 'margin-bottom': '10px', 'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.1)'}">
+                <div style="font-weight: bold;">Vaccine Name: {{ dose.vaccine_name }}</div>
+                <div>Dose Certificate ID: {{ dose.dose_cid }}</div>
+                <div style="color: white; background-color: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 4px; margin-top: 8px;">
+                    Approval Status: {{ dose.dose_is_approved === 'No' ? 'Not Approved' : 'Approved' }}
+                </div>
+            </div>
+        </div>
+        <div [ngSwitch]="allDoses.length" style="text-align: center; opacity: 0.8;">
+            <h2 *ngSwitchCase="0">
+                Take your vaccines First
+            </h2>
+            <h2 *ngSwitchCase="1">
+                Take your second vaccine now
+            </h2>
+            <h2 *ngSwitchCase="2">
+                You are fully vaccinated
+            </h2>
+        </div>
+    
+        <button class="p-2" style="border-radius: 12px;" (click)="showAddDoseForm()" *ngIf="allDoses.length < 2">Add Dose</button>
+    </div>
+    
+    <p-dialog header="Add Dose" [(visible)]="showAddDose" *ngIf="allDoses !== null && allDoses.length < 2">
+        <dose-detail (closeForm)="hideFormAndUpdateDoses()"></dose-detail>
+    </p-dialog>
+</div>

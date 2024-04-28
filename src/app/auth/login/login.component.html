@@ -1,10 +1,12 @@
 <form #loginForm="ngForm" (ngSubmit)="login()">
   <div class="d-flex flex-column justify-content-center align-items-center">
     <h1 class="welcome-text display-3">WELCOME</h1>
-    <input type="text" class="form-control" placeholder="Enter Email" name="email" ngModel email required>
+    <input type="text" class="form-control" [ngStyle]="{'background-color': inputEmail.dirty ? 'rgba(70,90,126,0.4)': 'white'}" placeholder="Enter Email" name="email" ngModel email required #inputEmail="ngModel">
     <p style="align-self: flex-start;" *ngIf="loginForm.controls['email']?.errors?.required && loginForm.controls['email'].dirty">*Email Is Required</p>
-    <input type="password" class="form-control" placeholder="Enter Password" name="password" ngModel required>
+    <input type="password" class="form-control" [ngStyle]="{'background-color': inputPassword.dirty ? 'rgba(70,90,126,0.4)': 'white'}" placeholder="Enter Password" name="password" ngModel required #inputPassword="ngModel">
     <p style="align-self: flex-start;" *ngIf="loginForm.controls['password']?.errors?.required && loginForm.controls['password'].dirty">*Password Is Required</p>
-    <button class="btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+    <button class="btn" type="submit" [disabled]="!loginForm.valid || inProgress">
+    <p-progressSpinner strokeWidth="3" animationDuration="1s" [style]="{ width: '30px', height: '30px' }" *ngIf="inProgress" [disabled]="inProgress"></p-progressSpinner>
+    {{ loginText }}</button>
   </div>
 </form>

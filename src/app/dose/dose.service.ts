@@ -9,16 +9,15 @@ import { Subject } from "rxjs";
 })
 export class DoseService {
 
-    isApproved: Subject<any> = new Subject();
+    isApprovedOrDisaprroved: Subject<any> = new Subject();
     
     constructor(private http: HttpClient, private authService: AuthService) {
 
     }
 
-    addDoseDetail(doseDetail) {
-        return this.http.post(
-            `${constantString.apiUrl}/users/dose`,
-            doseDetail,
+    getUserDoses(){
+        return this.http.get(
+            `${constantString.apiUrl}/users/doses`,
             {
                 headers: new HttpHeaders({
                     Authorization: `Bearer ${this.authService.currentUserToken}`
@@ -27,10 +26,46 @@ export class DoseService {
         )
     }
 
+    addDoseDetail(doseDetail, doseNumber) {
+        if (doseNumber == 1){
+            return this.http.post(
+                `${constantString.apiUrl}/users/doses`,
+                doseDetail,
+                {
+                    headers: new HttpHeaders({
+                        Authorization: `Bearer ${this.authService.currentUserToken}`
+                    })
+                }
+            )
+        }
+        else if (doseNumber == 2){
+            return this.http.put(
+                `${constantString.apiUrl}/users/doses`,
+                doseDetail,
+                {
+                    headers: new HttpHeaders({
+                        Authorization: `Bearer ${this.authService.currentUserToken}`
+                    })
+                }
+            )
+        }
+    }
+
     verifyDoseDetail(approvalId) {
         return this.http.put(
             `${constantString.apiUrl}/users/approve/${approvalId}`,
             {},
+            {
+                headers: new HttpHeaders({
+                    Authorization: `Bearer ${this.authService.currentUserToken}`
+                })
+            }
+        )
+    }
+
+    declineDoseDetail(approvalId) {
+        return this.http.delete(
+            `${constantString.apiUrl}/users/approve/${approvalId}`,
             {
                 headers: new HttpHeaders({
                     Authorization: `Bearer ${this.authService.currentUserToken}`

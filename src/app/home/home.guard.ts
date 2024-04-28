@@ -5,7 +5,7 @@ import { constantString } from "../app.helpers";
 import { Router } from "@angular/router";
 import { MessageService } from "../shared/message/message.service";
 
-export function HomeGuard() {
+export function HomeGuard(){
     const messageService = inject(MessageService);
     const authService = inject(AuthService);
     const http = inject(HttpClient);
@@ -21,7 +21,6 @@ export function HomeGuard() {
         return new Promise( (resolve, reject) => {
             roleRequest.subscribe(
                 (resData) => {
-                    console.log(resData);
                     authService.role = resData["role"];
                     resolve(true);
                 },
