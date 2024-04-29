@@ -1,10 +1,10 @@
-.sidebar{
+.sidebar {
     background-color: #9e3028;
-    width: 280px;
     height: 100vh;
     min-height: 100%;
 }
-.circle-img{
+
+.circle-img {
     width: 200px;
     height: 200px;
     border-radius: 100%;
@@ -15,10 +15,18 @@
     justify-content: center;
     align-items: center;
 }
+
 a {
     font-weight: bold;
     font-size: 30px;
 }
-.active-link{
-    background-color: rgba(70,90,126,0.4);
+
+.active-link {
+    background-color: rgba(70, 90, 126, 0.4);
+}
+
+.toggle-button{
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
 }

@@ -7,7 +7,6 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -17,15 +16,8 @@ import { MessageComponent } from './shared/message/message.component';
 import { checkLoggedInUser } from './auth/auth.guard';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationService } from 'primeng/api';
+import { AuthModule } from './auth/auth.module';
 
-
-const appRoutes: Routes = [
-  {
-    path: "login",
-    canActivate: [checkLoggedInUser],
-    loadChildren: () => import('./auth/auth.module').then((mod) => mod.AuthModule)
-  }
-]
 
 @NgModule({
   declarations: [
@@ -34,7 +26,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules}),
+    RouterModule.forRoot(
+      [],
+      { preloadingStrategy: PreloadAllModules }
+    ),
+    AuthModule,
     HomeModule,
     TableModule,
     ButtonModule,
@@ -44,8 +40,7 @@ const appRoutes: Routes = [
     NgbTooltipModule,
     ToastModule,
     ConfirmDialogModule,
-    ProgressSpinnerModule,
-    BrowserAnimationsModule
+    ProgressSpinnerModule
   ],
   providers: [
     ConfirmationService,

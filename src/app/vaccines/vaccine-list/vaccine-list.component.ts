@@ -8,12 +8,12 @@ import { ConfirmationService } from 'primeng/api';
   templateUrl: './vaccine-list.component.html',
   styleUrl: './vaccine-list.component.css'
 })
-export class VaccineListComponent implements OnInit{
+export class VaccineListComponent implements OnInit {
   vaccineName: string;
-  vaccines: {vaccine_id: string, vaccine_name: string}[] = [];
+  vaccines: { vaccine_id: string, vaccine_name: string }[] = [];
 
   constructor(
-    private vaccineService: VaccineService, 
+    private vaccineService: VaccineService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService
   ) {
@@ -21,14 +21,12 @@ export class VaccineListComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.vaccineService.getVaccines().subscribe((vaccineData: {vaccine_id: string, vaccine_name: string}[]) => {
+    this.vaccineService.getVaccines().subscribe((vaccineData: { vaccine_id: string, vaccine_name: string }[]) => {
       this.vaccines = vaccineData["vaccines"];
-      console.log(this.vaccines);
     }, (error) => {
       this.messageService.showMessage(error.error.message);
     })
     this.vaccineService.vaccineDeleted.subscribe((vaccineId) => {
-      console.log(vaccineId);
       this.vaccines = this.vaccines.filter(vaccine => vaccine['vaccine_id'] !== vaccineId)
     })
   }
@@ -40,18 +38,19 @@ export class VaccineListComponent implements OnInit{
         this.addVaccine();
       },
       reject: () => {
+        this.vaccineName = '';
       }
     });
   }
 
   addVaccine() {
-    this.vaccineService.addVaccines({vaccine_name: this.vaccineName}).subscribe( (resData: any) => {
+    this.vaccineService.addVaccines({ vaccine_name: this.vaccineName }).subscribe((resData: any) => {
       this.messageService.showMessage(resData.message);
-      this.vaccines.push({vaccine_id: resData.vaccine_id, vaccine_name: this.vaccineName});
+      this.vaccines.push({ vaccine_id: resData.vaccine_id, vaccine_name: this.vaccineName });
       this.vaccineName = '';
     },
-    (error) => {
-      this.messageService.showMessage(error.error.message);
-    })
+      (error) => {
+        this.messageService.showMessage(error.error.message);
+      })
   }
 }

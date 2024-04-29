@@ -1,5 +1,4 @@
 .btn {
-    width: 200px;
     border: 2px solid brown;
     background-color: rgb(243, 175, 163);
 }
@@ -15,14 +14,8 @@
 input {
     background-color: bisque;
     border-color: brown;
-    align-self: center;
-    width: 500px;
     transition: background-color 0.5s;
     &:hover {
         background-color: rgb(241, 218, 224);
     }
-}
-.add-user-div {
-    text-align: center;
-    margin-top: 50px solid #9e3028;
 }

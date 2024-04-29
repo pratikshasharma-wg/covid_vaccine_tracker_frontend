@@ -13,7 +13,7 @@ export class UsersListComponent {
   date: string;
   vaccine: string;
   doseNum: string;
-  users: UserDetail[] = [];
+  users: UserDetail[] = null;
 
   constructor(private usersService: UsersService, private messageService: MessageService) {
 

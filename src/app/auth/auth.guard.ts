@@ -5,8 +5,8 @@ import { Router } from "@angular/router";
 
 export function checkLoggedInUser() {
 
+    const router = inject(Router);
     const authService = inject(AuthService);
-    const router = inject(Router)
 
     if (authService.isLoggedIn) {
         router.navigate(['/']);

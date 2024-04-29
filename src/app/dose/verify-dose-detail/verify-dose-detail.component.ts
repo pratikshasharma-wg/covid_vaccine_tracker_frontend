@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DoseService } from '../dose.service';
+import { ConfirmationService } from 'primeng/api';
 import { MessageService } from '../../shared/message/message.service';
 
 @Component({
@@ -10,7 +11,11 @@ import { MessageService } from '../../shared/message/message.service';
 export class VerifyDoseDetailComponent {
   unapprovedData: any = null;
 
-  constructor(private doseService: DoseService, private messageService: MessageService) {
+  constructor(
+    private doseService: DoseService, 
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) {
 
   }
 
@@ -34,6 +39,16 @@ export class VerifyDoseDetailComponent {
         this.messageService.showMessage(resData.message);
       }
     )
+  }
+
+  confirmBox(approvalId, confirmAction) {
+    this.confirmationService.confirm({
+      message: `Are you sure you want to ${confirmAction} the details?`,
+      accept: () => {
+        this[`${confirmAction}`](approvalId);
+      },
+      reject: () => { }
+    });
   }
 
   disapprove(approvalId) {

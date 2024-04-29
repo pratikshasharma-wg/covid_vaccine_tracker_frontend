@@ -29,10 +29,6 @@ td{
     color: brown;
     font-weight: bold;
 }
-.table .p-table-wrapper .p-datatable .p-datatable-table{
-    margin-left: 100px;
-    border-radius: 200px;
-}
 .users-list-div{
     border-top:50px solid #9e3028;
     text-align: center;

@@ -8,6 +8,7 @@ import { AuthService } from '../../../auth/auth.service';
 })
 export class SidebarComponent {
   role: string;
+  isExpanded: boolean = true;
 
   constructor(private authService: AuthService) {
     this.role = authService.role;
@@ -15,6 +16,10 @@ export class SidebarComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  toggleSidebar(){
+    this.isExpanded = !this.isExpanded;
   }
 
 }

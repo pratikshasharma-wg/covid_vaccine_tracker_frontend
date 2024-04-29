@@ -9,6 +9,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { FormsModule } from '@angular/forms';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
     UsersRoutingModule,
     TableModule,
     FormsModule,
+    ProgressSpinnerModule,
     NgbTooltipModule
   ]
 })

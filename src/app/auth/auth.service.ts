@@ -18,7 +18,7 @@ export class AuthService {
         this.isLoggedIn = this.currentUserToken ? true : false;
     }
 
-    login(loginCredentials: {email: string, password: string}) {
+    login(loginCredentials: { email: string, password: string }) {
         return this.http.post(`${constantString.apiUrl}/login`, loginCredentials);
     }
 
@@ -33,14 +33,15 @@ export class AuthService {
 
     changePassword(newPassword: string) {
         return this.http.post(
-            `${constantString.apiUrl}/change-password`, 
+            `${constantString.apiUrl}/change-password`,
             {
                 new_password: newPassword
-            }, {
+            },
+            {
                 headers: new HttpHeaders({
-                Authorization: `Bearer ${this.currentUserToken}`
+                    Authorization: `Bearer ${this.currentUserToken}`
+                })
             })
-        })
     }
 
     checkFirstTimeLogin() {

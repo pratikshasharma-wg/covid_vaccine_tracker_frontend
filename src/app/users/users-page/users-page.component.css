@@ -23,7 +23,7 @@
     &:hover {
         box-shadow: 15px 15px 20px rgb(96, 96, 134);
     }
-
+    cursor: pointer;
 }
 .image{
     background-size: contain;
