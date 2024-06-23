@@ -1,13 +1,20 @@
+.auth-div {
+    padding: 5%;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
 body {
-    margin: 0;
+    /* margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #9e3028;
+    font-family: Arial, sans-serif; */
+    /* background: linear-gradient(to right, #9e302869, #9e3028); */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
 
 .welcome-text {
     color: rgb(218, 208, 185);
-    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 form {
