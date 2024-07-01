@@ -21,31 +21,31 @@
       </a>
     </li>
     <li *ngIf="role == 'Employee' ">
-      <a routerLink="profile" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+      <a routerLink="user/profile" routerLinkActive="active-link"
         class="nav-link text-white">
         Profile
       </a>
     </li>
     <li *ngIf="role == 'Admin' ">
-      <a routerLink="users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+      <a routerLink="users" routerLinkActive="active-link"
         class="nav-link text-white">
         Employees
       </a>
     </li>
     <li *ngIf="role == 'Admin' ">
-      <a routerLink="vaccines" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+      <a routerLink="vaccines" routerLinkActive="active-link"
         class="nav-link text-white">
         Vaccines
       </a>
     </li>
     <li *ngIf="role == 'Employee'">
-      <a routerLink="dose" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+      <a routerLink="dose" routerLinkActive="active-link"
         class="nav-link text-white">
         Dose Details
       </a>
     </li>
     <li>
-      <a class="nav-link text-white" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+      <a class="nav-link text-white" routerLinkActive="active-link"
         (click)="logout()" style="cursor: pointer;">
         Logout
       </a>

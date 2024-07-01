@@ -20,7 +20,8 @@ export function checkFirstTimeLogin() {
                         router.navigate(['/change-password']);
                     }
                     else if(error.error.message.includes("update your profile")) {
-                        router.navigate(['/profile']);
+                        console.log('hello')
+                        router.navigate(['/user/profile']);
                     }
                 }
             )

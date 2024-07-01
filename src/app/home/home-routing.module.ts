@@ -18,22 +18,22 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: "",
+        path: "users",
         canActivate: [checkFirstTimeLogin],
         loadChildren: () => import('../users/users.module').then((mod) => mod.UsersModule)
       },
       {
-        path: "",
+        path: "dose",
         canActivate: [checkFirstTimeLogin],
         loadChildren: () => import('../dose/dose.module').then((mod) => mod.DoseModule)
       },
       {
-        path: "",
+        path: "vaccines",
         canActivate: [checkFirstTimeLogin],
         loadChildren: () => import('../vaccines/vaccines.module').then((mod) => mod.VaccinesModule)
       },
       {
-        path: "",
+        path: "user",
         loadChildren: () => import('../user/user.module').then((mod) => mod.UserModule)
       },
       {

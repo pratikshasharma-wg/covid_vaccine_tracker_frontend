@@ -4,7 +4,7 @@ import { VerifyDoseDetailComponent } from './verify-dose-detail/verify-dose-deta
 import { AllDoseComponent } from './all-dose-details/all-dose.component';
 
 const routes: Routes = [
-  {path: "dose", component: AllDoseComponent},
+  {path: "", component: AllDoseComponent},
   {path: "unapproved", component: VerifyDoseDetailComponent}
 ];
 
